@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Profile from "./profile/components/Profile";
+import PropTypes from "prop-types";
+import Navbar from "./profile/components/Navbar";
+import Footer from "./profile/components/Footer";
 function App() {
+  const styleObject = { backgroundColor:"#ecf0f1", color: "#1e272e", textAlign: "center",borderRadius:"5px" };
+  const prof = [
+    {
+      fullName: "Diego Maradona",
+      bio: "Born October 30, 1960 in Lanús and died November 25, 2020 in Tigre, is an Argentinian international footballer who became a coach. During his playing career, between 1976 and 1997, he played as an attacking midfielder in jersey no.10.",
+      profession: "Footballeur international",
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={styleObject}>
+      <Navbar/>
+      <Profile el={prof} />
+      <Footer/>
     </div>
   );
 }
-
+Profile.PropTypes = {
+  el: PropTypes.object,
+};
 export default App;

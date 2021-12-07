@@ -1,0 +1,11 @@
+.Ftt{
+    background-color: "#1e272e";
+    border-radius: 15px;
+    border-style: hidden;
+    padding: 18px; 
+    text-align: center;
+    width: auto;
+    position: sticky;
+    top:0;
+    z-index: 1;
+}
