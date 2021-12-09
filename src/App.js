@@ -1,25 +1,21 @@
-import Profile from "./profile/components/Profile";
-import PropTypes from "prop-types";
-import Navbar from "./profile/components/Navbar";
-import Footer from "./profile/components/Footer";
-function App() {
-  const styleObject = { backgroundColor:"#ecf0f1", color: "#1e272e", textAlign: "center",borderRadius:"5px" };
-  const prof = [
-    {
-      fullName: "Diego Maradona",
-      bio: "Born October 30, 1960 in Lanús and died November 25, 2020 in Tigre, is an Argentinian international footballer who became a coach. During his playing career, between 1976 and 1997, he played as an attacking midfielder in jersey no.10.",
-      profession: "Footballeur international",
-    },
-  ];
-  return (
-    <div className="App" style={styleObject}>
-      <Navbar/>
-      <Profile el={prof} />
-      <Footer/>
-    </div>
-  );
+import React, { Component } from 'react'
+import Appp from './Appp'
+export class App extends Component {
+  state= {
+    isShow : false
+  }
+  handleShow=()=>{
+this.setState({ isShow:!this.state.isShow})
+  }
+  render() {
+    return (
+      <div style={{marginRight:"80px" , textAlign:"center"}}>
+        <button onClick={this.handleShow}>{this.state.isShow ? "Hide" : "Show"}</button>
+        {this.state.isShow === true ? <Appp/> : null }
+
+      </div>  
+    )
+  }
 }
-Profile.PropTypes = {
-  el: PropTypes.object,
-};
-export default App;
+
+export default App
